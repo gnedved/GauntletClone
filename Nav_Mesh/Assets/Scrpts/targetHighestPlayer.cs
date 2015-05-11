@@ -12,7 +12,7 @@ public class targetHighestPlayer : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+        controller = GameObject.Find("Master_Controller_obj");
 		agent = GetComponent<NavMeshAgent> ();
 	}
 	
@@ -27,6 +27,7 @@ public class targetHighestPlayer : MonoBehaviour {
 				pos = i; 
 			}
 		}
+        pos = 0;
 		//sets the enemies target to the player in the player array slot respective to the highest health array slot.
 		target = master_control.players [pos].transform;
 		agent.SetDestination (target.position);

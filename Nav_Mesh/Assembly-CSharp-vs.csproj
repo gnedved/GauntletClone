@@ -47,12 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scrpts\Agent_Script.cs" />
-     <Compile Include="Assets\Scrpts\Archer.cs" />
      <Compile Include="Assets\Scrpts\Master_Control.cs" />
+     <Compile Include="Assets\Scrpts\Players\Archer.cs" />
+     <Compile Include="Assets\Scrpts\Players\Player.cs" />
+     <Compile Include="Assets\Scrpts\Players\Valkyrie.cs" />
+     <Compile Include="Assets\Scrpts\Players\Warrior.cs" />
+     <Compile Include="Assets\Scrpts\Players\Wizard.cs" />
      <Compile Include="Assets\Scrpts\Spawner.cs" />
-     <Compile Include="Assets\Scrpts\Valkyrie.cs" />
-     <Compile Include="Assets\Scrpts\Warrior.cs" />
-     <Compile Include="Assets\Scrpts\Wizard.cs" />
+     <Compile Include="Assets\Scrpts\Timer_test.cs" />
+     <Compile Include="Assets\Scrpts\Wave_spawner.cs" />
+     <Compile Include="Assets\Scrpts\spawnPlayer.cs" />
      <Compile Include="Assets\Scrpts\targetClosestPlayer.cs" />
      <Compile Include="Assets\Scrpts\targetHighestPlayer.cs" />
      <Compile Include="Assets\Scrpts\targetLowestPlayer.cs" />

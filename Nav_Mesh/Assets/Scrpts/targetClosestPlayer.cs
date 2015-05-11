@@ -14,7 +14,7 @@ public class targetClosestPlayer : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+        controller = GameObject.Find("Master_Controller_obj");
 		agent = GetComponent<NavMeshAgent> ();
 	}
 	
@@ -25,16 +25,20 @@ public class targetClosestPlayer : MonoBehaviour {
 		// cycles through the player array and stores the position of the farthest player
 		for (int x = 0; x < master_control.players.Length; x++)
 		{
-			float distance = Vector3.Distance (master_control.players[x].transform.position, this.transform.position);
-			if (distance < closestDistance){
-				closestDistance = distance;
-				pos = x;
+            if (master_control.players[x] != null)
+            { 
+			    float distance = Vector3.Distance (master_control.players[x].transform.position, this.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    pos = x;
+                }
 			}
 		
 		}
-	
+        closestDistance = 10000000;
 		//sets the enemies target to the player furthest from itself.
-		target = master_control.players [pos].transform;
+        target = master_control.players[pos].transform;
 		agent.SetDestination (target.position);
 	}
 }
