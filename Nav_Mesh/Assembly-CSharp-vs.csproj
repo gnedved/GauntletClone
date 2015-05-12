@@ -56,12 +56,12 @@
      <Compile Include="Assets\Scrpts\Spawner.cs" />
      <Compile Include="Assets\Scrpts\Timer_test.cs" />
      <Compile Include="Assets\Scrpts\Wave_spawner.cs" />
+     <Compile Include="Assets\Scrpts\bullet_Move.cs" />
      <Compile Include="Assets\Scrpts\enemy_Attack.cs" />
      <Compile Include="Assets\Scrpts\spawnPlayer.cs" />
      <Compile Include="Assets\Scrpts\targetClosestPlayer.cs" />
      <Compile Include="Assets\Scrpts\targetHighestPlayer.cs" />
      <Compile Include="Assets\Scrpts\targetLowestPlayer.cs" />
-     <Compile Include="Assets\bullet_Move.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
