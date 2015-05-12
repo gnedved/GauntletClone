@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour {
     public GameObject Goblin;
     public float Health = 100.0f;
     public bool isactive = false;
-    public bool canSpawn = false;
+    public bool canSpawn = true;
     System.Timers.Timer spawnTimer = new System.Timers.Timer();
     
     
@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour {
             isactive = false;
 
         }
-        spawnTimer.Interval = 5 * 1000;
+        spawnTimer.Interval = 15 * 1000;
 
         spawnTimer.Start();
 
@@ -63,10 +63,12 @@ public class Spawner : MonoBehaviour {
         }
         if (isactive == true)
         {
+            
             transform.position = new Vector3(transform.position.x, 1, transform.position.z);
             if (canSpawn == true)
             {
                 //insert timer to spawn enemies on a loop
+                Debug.Log("working");
                 string name = this.transform.name;
                 if (name == "Lobber_Spawner")
                 {
