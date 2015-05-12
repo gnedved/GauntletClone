@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Warrior : MonoBehaviour {
+public class Warrior : Player
+{
 
-	public float Health = 200.0f;
 
-	// Use this for initialization
-	void Start () {
+    void Start()
+    {
+        Health = 200.0f;
+        characterController = GetComponent<CharacterController>();
+    }
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

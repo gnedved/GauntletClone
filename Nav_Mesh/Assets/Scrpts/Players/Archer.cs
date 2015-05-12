@@ -1,19 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Archer: MonoBehaviour {
-    public float Health = 100.0f;
-    public GameObject playerParent;
+public class Archer: Player
+{
 
-	// Use this for initialization
-	void Start () {
-        //playerParent = GameObject.Find
-        //playerParent.transform.parent =
-        //Health = 100.0f;
+	void Start ()
+    {
+        speed = 10f;
+        characterController = GetComponent<CharacterController>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

@@ -1,16 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Wizard : MonoBehaviour {
+public class Wizard : Player
+{
 
-	public float Health = 90.0f;
-	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+    {
+        Health = 90.0f;
+        characterController = GetComponent<CharacterController>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

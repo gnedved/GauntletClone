@@ -1,18 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Valkyrie : MonoBehaviour {
+public class Valkyrie : Player
+{
 
-	public float Health = 150.0f;
+    void Start()
+    {
+        Health = 150.0f;
+        characterController = GetComponent<CharacterController>();
+    }
 
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
