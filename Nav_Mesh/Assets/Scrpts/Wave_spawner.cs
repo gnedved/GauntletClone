@@ -13,7 +13,7 @@ public class Wave_spawner : MonoBehaviour {
     public int totalSpawns;
     public int waveNumber;
 
-    private bool timerActive = false;
+    private bool timerActive = true;
     
     
     
@@ -24,13 +24,14 @@ public class Wave_spawner : MonoBehaviour {
        //foreach(GameObject spawner in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[]){
 
 
-        foreach(GameObject spawner in GameObject.FindGameObjectsWithTag("Spawner")){
-                spawnerList.Add(spawner);
-                Debug.Log("add");
+        foreach(GameObject spawner in GameObject.FindGameObjectsWithTag("Spawner"))
+        {
+            spawnerList.Add(spawner);
+            Debug.Log("add");
             
         }
         totalSpawns = spawnerList.Count;
-        waveTimer.Interval = 10 * 1000;
+        waveTimer.Interval = 60 * 1000;
 
         waveTimer.Start();
 
@@ -50,12 +51,12 @@ public class Wave_spawner : MonoBehaviour {
 
     void Update()
     {
-
+        activeSpawns = spawnerList.Count - totalSpawns + activeSpawns;
         if (activeSpawns < totalSpawns)
         {
             if (timerActive == true)
             {
-                activeSpawns = spawnerList.Count - totalSpawns + activeSpawns;
+                
                 if (activeSpawns < spawnerList.Count)
                 {
                     for (int x = 0; x < 4 + waveNumber; x++)
