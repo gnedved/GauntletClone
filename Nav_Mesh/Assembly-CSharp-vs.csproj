@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scrpts\targetClosestPlayer.cs" />
      <Compile Include="Assets\Scrpts\targetHighestPlayer.cs" />
      <Compile Include="Assets\Scrpts\targetLowestPlayer.cs" />
+     <Compile Include="Assets\Scrpts\target_Player.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

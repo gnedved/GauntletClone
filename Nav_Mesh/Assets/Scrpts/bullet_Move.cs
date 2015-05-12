@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class bullet_Move : MonoBehaviour {
-    
+public class bullet_Move : MonoBehaviour
+{
+
     public float speed = 15.0f;
     public GameObject playerToDamage;
     public Spawner spawnerScript;
@@ -14,48 +15,60 @@ public class bullet_Move : MonoBehaviour {
     private Valkyrie valkyrieScript;
 
 
-	// Use this for initialization
-	void Awake () {
-        
+    // Use this for initialization
+    void Awake()
+    {
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        
-	}
+
+    }
     void OnCollisionEnter(Collision col)
     {
-        /*
-        if (col.gameObject.tag == "player")
+
+        if (col.gameObject.tag == "Player")
         {
             playerToDamage = col.gameObject;
-            if (name == "Warrior_obj")
+            Debug.Log(playerToDamage.name);
+
+            if (col.gameObject.name == "Warrior_obj(Clone)")
             {
                 warriorScript = playerToDamage.GetComponent<Warrior>();
-                playerToDamage.warriorScript.Health ++;
+                warriorScript.Health = warriorScript.Health - 10;
+                Destroy(this.gameObject);
             }
-            if (name == "Archer_obj")
+            if (playerToDamage.name == "Archer_obj(Clone)")
             {
+                Debug.Log("archer hit");
                 archerScript = playerToDamage.GetComponent<Archer>();
-                healths[x] = archerScript.Health;
+                archerScript.Health = archerScript.Health - 10;
+                Destroy(this.gameObject);
             }
-            if (name == "Wizard_obj")
+            if (col.gameObject.name == "Wizard_obj(Clone)")
             {
                 wizardScript = playerToDamage.GetComponent<Wizard>();
-                healths[x] = wizardScript.Health;
+                wizardScript.Health = wizardScript.Health - 10;
+                Destroy(this.gameObject);
             }
-            if (name == "Valkyrie_obj")
+            if (col.gameObject.name == "Valkyrie_obj(Clone)")
             {
                 valkyrieScript = playerToDamage.GetComponent<Valkyrie>();
-                healths[x] = valkyrieScript.Health;
+                valkyrieScript.Health = valkyrieScript.Health - 10;
+                Destroy(this.gameObject);
+
             }
-         
+
+
+
         }
-         */
-        if ((col.gameObject.tag != "enemy") || (col.gameObject.tag != "Spawner"))
-            Debug.Log("Destroy");
-        Destroy(this.gameObject);
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

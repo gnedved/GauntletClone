@@ -11,6 +11,7 @@ public class Wave_spawner : MonoBehaviour {
     System.Timers.Timer waveTimer = new System.Timers.Timer();
     public int activeSpawns = 0;
     public int totalSpawns;
+    public int waveNumber;
 
     private bool timerActive = false;
     
@@ -42,27 +43,44 @@ public class Wave_spawner : MonoBehaviour {
         timerActive = true;
         waveTimer.Start();
         
+        
+        
 
     }
 
     void Update()
     {
-        activeSpawns = spawnerList.Count - totalSpawns + activeSpawns;
-         if (timerActive == true)
-         {
-             if (activeSpawns < spawnerList.Count)
-             {
-                 for (int x = 0; x < 3; x++)
-                 {
-                 
-                    spawnerSelect = spawnerList[activeSpawns];
-                    spawnerScript = spawnerSelect.GetComponent<Spawner>();
-                    activeSpawns++;
-                    spawnerScript.isactive = true;
-                    
-                 }
-                 timerActive = false;
-             }
+
+        if (activeSpawns < totalSpawns)
+        {
+            if (timerActive == true)
+            {
+                activeSpawns = spawnerList.Count - totalSpawns + activeSpawns;
+                if (activeSpawns < spawnerList.Count)
+                {
+                    for (int x = 0; x < 4 + waveNumber; x++)
+                    {
+
+                        spawnerSelect = spawnerList[activeSpawns];
+                        spawnerScript = spawnerSelect.GetComponent<Spawner>();
+                        activeSpawns++;
+                        spawnerScript.isactive = true;
+
+                    }
+                    waveNumber = waveNumber + 2;
+                    timerActive = false;
+
+                }
+            }
+        }
+        else 
+        {
+            waveTimer.Stop();
+        }
+         if (spawnerList.Count <= 0)
+         { 
+            // display win screen
+            // move to next level
          }
     }
 

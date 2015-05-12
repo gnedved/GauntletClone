@@ -62,22 +62,22 @@ public class Master_Control : MonoBehaviour
                 string name = cyclePlayer.transform.name;
 
                 //assigns slots in the health array
-                if (name == "Warrior_obj")
+                if (name == "Warrior_obj(Clone)")
                 {
                     warriorScript = cyclePlayer.GetComponent<Warrior>();
                     healths[x] = warriorScript.Health;
                 }
-                if (name == "Archer_obj")
+                if (name == "Archer_obj(Clone)")
                 {
                     archerScript = cyclePlayer.GetComponent<Archer>();
                     healths[x] = archerScript.Health;
                 }
-                if (name == "Wizard_obj")
+                if (name == "Wizard_obj(Clone)")
                 {
                     wizardScript = cyclePlayer.GetComponent<Wizard>();
                     healths[x] = wizardScript.Health;
                 }
-                if (name == "Valkyrie_obj")
+                if (name == "Valkyrie_obj(Clone)")
                 {
                     valkyrieScript = cyclePlayer.GetComponent<Valkyrie>();
                     healths[x] = valkyrieScript.Health;
