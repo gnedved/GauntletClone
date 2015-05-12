@@ -56,7 +56,6 @@ public class Wave_spawner : MonoBehaviour {
                  {
                  
                     spawnerSelect = spawnerList[activeSpawns];
-                    Debug.Log(spawnerSelect);
                     spawnerScript = spawnerSelect.GetComponent<Spawner>();
                     activeSpawns++;
                     spawnerScript.isactive = true;

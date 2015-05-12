@@ -33,7 +33,9 @@ public class Master_Control : MonoBehaviour
             //if there is a player is players array slot # it will spawn that player in as player 1-4
             if (players[x] != null)
             {
-                Instantiate(players[x],Player_Spawn.transform.position, Quaternion.identity);
+                GameObject spawnPlayer;
+                spawnPlayer = (GameObject)(Instantiate(players[x],Player_Spawn.transform.position, Quaternion.identity));
+                players[x] = spawnPlayer;
 
                 switch (x + 1)
                 {

@@ -13,7 +13,6 @@ public class targetLowestPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         controller = GameObject.Find("Master_Controller_obj");
-        Debug.Log(controller);
 		agent = GetComponent<NavMeshAgent> ();
 	}
 	
@@ -36,7 +35,5 @@ public class targetLowestPlayer : MonoBehaviour {
 		//sets the enemies target to the player in the player array slot respective to the lowest health array slot.
 		target = master_control.players [pos].transform;
 		agent.SetDestination (target.position);
-		Debug.Log (this.pos);
-		Debug.Log (target.position);
 	}
 }
